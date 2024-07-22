@@ -7,9 +7,10 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [errorMsg, setErrorMsg] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  console.log(url);
   async function fetchImages(getUrl) {
     try {
+        console.log(getUrl);
       setLoading(true);
 
       const response = await fetch(`${getUrl}?page=${page}&limit=${limit}`);
